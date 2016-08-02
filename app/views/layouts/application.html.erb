@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>SampleApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                                              'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim' %>
+    <!-- NOTEMOS QUE ESTA LLAMADA BUSCA EL PARTIAL Y LO "INSERTA" EN EL LUGAR DEL RENDER, BUSCANDOLO EN LAYOUT CON EL NOMBRE DE _shim.html.erb, DATE CUENTA DE LA CONVENCION (_ DECLARA PARCIALES Y LAS ENCUENTRA DE UN VISTAZO)  -->
+    <!-- El codigo siguiente se incluye para navegadores inferiores a internet explorer 9 -->
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    <!-- NOTEMOS QUE ESTA LLAMADA BUSCA EL PARTIAL Y LO "INSERTA" EN EL LUGAR DEL RENDER, BUSCANDOLO EN LAYOUT CON EL NOMBRE DE _header.html.erb, DATE CUENTA DE LA CONVENCION (_ DECLARA PARCIALES Y LAS ENCUENTRA DE UN VISTAZO)  -->
+      <!-- <header class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container">
+          <%= link_to "sample app", '#', id: "logo" %>
+          <nav>
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to "Home",   '#' %></li>
+              <li><%= link_to "Help",   '#' %></li>
+              <li><%= link_to "Log in", '#' %></li>
+            </ul>
+          </nav>
+        </div>
+      </header> -->
+    <div class="container">
+      <%= yield %>
+    <%= render 'layouts/footer' %>
+    </div>
+  </body>
 </html>

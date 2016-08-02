@@ -7,25 +7,33 @@ class StaticPagesControllerTest < ActionController::TestCase
   end
 
   test "should get root" do
-    get :home
+    get root_path
     # assert_response :home #esta linea generaba un error en el test
+    # era porque tenia home en vez de :success
+    assert_response :success
   end
 
   test "should get home" do
-    get :home
+    get root_path
     assert_response :success
     assert_select "title", "Home | #{@base_title}"
   end
 
   test "should get help" do
-    get :help
+    get helf_path
     assert_response :success
     assert_select "title", "Help | #{@base_title}"
   end
 
   test "should get about" do
-    get :about
+    get about_path
     assert_response :success
     assert_select "title", "About | #{@base_title}"
+  end
+
+   test "should get contact" do
+    get contact_path
+    assert_response :success
+    assert_select "title", "Contact | #{@base_title}"
   end
 end

@@ -50,3 +50,6 @@ group :production do
 end
 
 gem 'minitest-reporters'
+
+# CSS customers
+gem 'bootstrap-sass', '3.3.6'
