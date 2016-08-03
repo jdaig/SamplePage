@@ -3,8 +3,12 @@
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
+<<<<<<< HEAD
     <%= stylesheet_link_tag    'application', media: 'all',
                                               'data-turbolinks-track': 'reload' %>
+=======
+    <%= stylesheet_link_tag    'application', media: 'all','data-turbolinks-track': 'reload' %>
+>>>>>>> 0c09cf7329e1f8425f4ad9bce7c8bb8e243234f7
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= render 'layouts/shim' %>
     <!-- NOTEMOS QUE ESTA LLAMADA BUSCA EL PARTIAL Y LO "INSERTA" EN EL LUGAR DEL RENDER, BUSCANDOLO EN LAYOUT CON EL NOMBRE DE _shim.html.erb, DATE CUENTA DE LA CONVENCION (_ DECLARA PARCIALES Y LAS ENCUENTRA DE UN VISTAZO)  -->
@@ -30,8 +34,17 @@
         </div>
       </header> -->
     <div class="container">
+<<<<<<< HEAD
       <%= yield %>
     <%= render 'layouts/footer' %>
+=======
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <%= yield %>
+    <%= render 'layouts/footer' %>
+    <%= debug(params) if Rails.env.development? %>
+>>>>>>> 0c09cf7329e1f8425f4ad9bce7c8bb8e243234f7
     </div>
   </body>
 </html>
