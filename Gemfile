@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.11'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -48,3 +48,10 @@ end
 group :production do
   gem 'pg', '0.18.4'
 end
+
+gem 'minitest-reporters'
+
+# CSS customers
+gem 'bootstrap-sass', '3.3.6'
+
+
