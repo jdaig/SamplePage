@@ -6,15 +6,12 @@
 $light-gray: #777;
 $gray-medium-light: #eaeaea;
 
-<<<<<<< HEAD
-=======
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
 
->>>>>>> 0c09cf7329e1f8425f4ad9bce7c8bb8e243234f7
 /* universal */
 
 body {
@@ -159,8 +156,6 @@ footer  {
     } 
   } 
 }
-<<<<<<< HEAD
-=======
 
 /* miscellaneous */
 
@@ -236,4 +231,4 @@ input {
     color: $state-danger-text;
   }
 }
->>>>>>> 0c09cf7329e1f8425f4ad9bce7c8bb8e243234f7
+

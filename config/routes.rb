@@ -57,17 +57,10 @@ Rails.application.routes.draw do
   #   end
   # root 'application#hello'
   root 'static_pages#home'
-<<<<<<< HEAD
-  get  '/help',    to: 'static_pages#help', as: 'helf'
-  get  '/about',   to: 'static_pages#about'
-  get  '/contact', to: 'static_pages#contact'
-  get  '/signup',  to: 'user#new'
-=======
   get  '/help',    to: 'static_pages#help', as: 'helf' #example
   get  '/about',   to: 'static_pages#about'
   get  '/contact', to: 'static_pages#contact'
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
   resources :users
->>>>>>> 0c09cf7329e1f8425f4ad9bce7c8bb8e243234f7
 end
